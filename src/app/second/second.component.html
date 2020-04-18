@@ -1,0 +1,14 @@
+
+Select State
+<select  [(ngModel)]="state" #statecode  (change)='loadCities(statecode.value)'>
+    <option value="0">Select</option>
+    <option *ngFor="let st of states" value="{{st.code}}">{{st.name}}.</option>
+</select>
+<br>
+<br>
+Select City
+<select  [(ngModel)]="city" >
+        <option value="0">Select</option>
+        <option *ngFor="let ct of cities" >{{ct}}.</option>
+    </select>
+<hr>
