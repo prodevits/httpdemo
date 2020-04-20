@@ -1,0 +1,61 @@
+<div class="row">
+    <h1>Employees</h1>
+</div>
+<div class="row">
+<div class="col-md-12">
+    <div  *ngIf="message" class="alert alert-dismissible" [ngClass]="{'alert-danger':status=='fail','alert-info':status=='success'}" role='alert'>{{message}} 
+        <button class="close" (click)="closeAlert()">X</button>        
+                </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+
+        <form #empForm="ngForm" (submit)="onSubmit()">
+            <div class="form-group">
+                <label for="">Empid</label>
+                <input type="text" class="form-control" name="empid" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" name="name" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <input type="text" class="form-control" name="city" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="">Salary</label>
+                <input type="text" class="form-control" name="salary" ngModel>
+            </div>
+
+            <div class="form-group">
+                    <button class="btn btn-success">Submit</button>
+                </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div [hidden]='!spin'>
+            <h3 class="text-center">Working...
+            <img src="assets/spin.gif" height="200" alt="">
+        </h3>
+        </div>
+        <table class="table table-bordered" *ngIf="empList">
+            <tr>
+                <th>Empid</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Salary</th>
+            </tr>
+            <tr *ngFor="let e of empList">
+                <td>{{e.empid}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.city}}</td>
+                <td>{{e.salary}}</td>
+                <td>
+                    <button (click)="remove(e.empid)">Remove</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

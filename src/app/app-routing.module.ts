@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { EmpComponent } from './emp/emp.component';
+import { HttpRestComponent } from './http-rest/http-rest.component';
 
 
 
@@ -11,6 +12,8 @@ const routes: Routes = [
   {path:'first',component:FirstComponent},
   {path:'second',component:SecondComponent},
   {path:'emps',component:EmpComponent},
+  {path:'rest-demo',component:HttpRestComponent},
+  
   
   
 

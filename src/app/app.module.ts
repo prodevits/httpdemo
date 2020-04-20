@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { HttpClientModule} from '@angular/common/http';
 import { SecondComponent } from './second/second.component';
-import { EmpComponent } from './emp/emp.component'
+import { EmpComponent } from './emp/emp.component';
+import { HttpRestComponent } from './http-rest/http-rest.component'
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    EmpComponent
+    EmpComponent,
+    HttpRestComponent
   ],
   imports: [
     BrowserModule,
